@@ -4,14 +4,14 @@ import Logo from "@/assets/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="navbar bg-base-100 px-6 py-6 text-white md:px-8">
+    <nav className="navbar bg-base-100 px-4 py-4 text-white md:px-8 md:py-6">
       <div className="navbar-start">
-        <div className="flex gap-2 items-center text-xl font-bold">
-          <Image src={Logo} alt="" />
+        <div className="flex gap-2 items-center text-lg md:text-xl font-bold">
+          <Image src={Logo} alt="" width={32} height={32} />
           FITLOG
         </div>
       </div>
-      <div className="navbar-center">
+      <div className="navbar-center hidden md:flex">
         <div className="flex gap-4">
           <a
             href="#"
@@ -19,22 +19,22 @@ const Navbar = () => {
           >
             Workout
           </a>
-          <a href="" className="px-4 py-2 font-medium">
+          <a href="#" className="px-4 py-2 font-medium">
             My Plan
           </a>
         </div>
       </div>
 
       <div className="navbar-end">
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2 text-sm font-medium text-white">
+        <div className="flex items-center gap-2 md:gap-4">
+          <div className="flex items-center gap-1 md:gap-2 text-xs  md:text-sm font-medium">
             <span>Plan</span>
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#CCFF00] text-xs font-bold text-black">
               0
             </span>
           </div>
 
-          <div className="flex items-center gap-2 text-sm font-medium text-white">
+          <div className="flex items-center gap-1 md:gap-2 text-xs  md:text-sm font-medium">
             <span>Saved</span>
             <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[#2D313B]  bg-base-300 text-xs font-bold text-white">
               0
