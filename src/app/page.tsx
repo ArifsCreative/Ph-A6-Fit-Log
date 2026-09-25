@@ -1,10 +1,18 @@
-import Navbar from '@/components/Navbar';
-import React from 'react';
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import Library from "@/components/Library";
+import { getWorkouts } from "@/services/workoutApi";
 
+const page = async () => {
 
-const page = () => {
+  const workouts = await getWorkouts();
   return (
-    <Navbar />
+    <>
+      <Navbar />
+      <Hero />
+      <Library workouts={workouts} />
+         
+    </>
   );
 };
 

@@ -1,10 +1,9 @@
 import Image from "next/image";
-import React from "react";
 import Logo from "@/assets/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="navbar bg-base-100 px-4 py-4 text-white md:px-8 md:py-6">
+    <nav className="navbar bg-base-300 border border-[#253933] px-4 py-4 text-white md:px-8 md:py-6">
       <div className="navbar-start">
         <div className="flex gap-2 items-center text-lg md:text-xl font-bold">
           <Image src={Logo} alt="" width={32} height={32} />
