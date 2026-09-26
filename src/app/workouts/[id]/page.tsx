@@ -1,5 +1,6 @@
 import { getWorkoutById } from "@/services/workoutApi";
 import Image from "next/image";
+import WorkoutActions from "@/components/WorkoutActions";
 
 export default async function WorkoutDetails({
   params,
@@ -75,15 +76,7 @@ export default async function WorkoutDetails({
           </div>
 
           <div className="flex gap-4 mt-8">
-            <button className="bg-lime-400 text-black px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
-                <Image src="/icons/plus.svg" alt="" width={12} height={12}/>
-                Add to today's plan
-            </button>
-
-            <button className="border border-gray-600 px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
-                <Image src="/icons/bookmark.svg" alt="" width={12} height={12}/>
-                 Save for later
-            </button>
+            <WorkoutActions workout={workout}/>
           </div>
         </div>
       </div>
