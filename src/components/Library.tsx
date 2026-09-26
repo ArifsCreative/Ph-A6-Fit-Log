@@ -11,7 +11,7 @@ interface Props {
 const Library = ({workouts}:Props)=> {
 
     return (
-        <section id="library" className="px-4 py-12 md:px-8">
+        <section id="library" className="bg-base-300 px-4 py-12 md:px-8">
             <div className="mx-auto max-w-7xl">
                 <h2 className="text-3xl font-black uppercase text-white">
                    THE LIBRARY 
