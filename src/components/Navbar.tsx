@@ -5,7 +5,7 @@ import { useWorkout } from "@/context/WorkoutContext";
 import Logo from "@/assets/logo.png";
 
 const Navbar = () => {
-  const { plan, saved } = useWorkout();
+  const { plan, saved, loaded } = useWorkout();
 
   return (
     <nav className="navbar sticky top-0 z-50 bg-base-300 border border-[#253933] px-4 py-4 text-white md:px-8 md:py-6">
@@ -34,7 +34,7 @@ const Navbar = () => {
           <div className="flex items-center gap-1 md:gap-2 text-xs  md:text-sm font-medium">
             <span>Plan</span>
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#CCFF00] text-xs font-bold text-black">
-              {plan.length}
+              {loaded ? plan.length : " "}
             </span>
           </div>
 
