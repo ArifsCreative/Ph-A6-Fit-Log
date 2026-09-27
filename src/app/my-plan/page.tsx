@@ -87,13 +87,13 @@ export default function MyPlanPage() {
             className="flex gap-4">
             <button
               onClick={() => setActiveTab("plan")}
-              className={` px-5 py-2 rounded-lg font-semibold ${activeTab === "plan" ? "bg-white text-black" : "border border-gray-700"} `}>
+              className={` px-5 py-2 rounded-lg font-semibold ${activeTab === "plan" ? "bg-[#97aacc] text-black" : "border border-gray-700"} `}>
 
               Today's Plan
             </button>
 
             <button
-              onClick={() => setActiveTab("saved")} className={` px-5 py-2 rounded-lg font-semibold ${activeTab === "saved" ? "bg-white text-black" : "border border-gray-700"}`} >
+              onClick={() => setActiveTab("saved")} className={` px-5 py-2 rounded-lg font-semibold ${activeTab === "saved" ? "bg-[#97aacc] text-black" : "border border-gray-700"}`} >
               Saved
             </button>
           </div>

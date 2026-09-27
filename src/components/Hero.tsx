@@ -17,7 +17,7 @@ const Hero = () => {
             into today's plan, and watch the week's work add up.
           </p>
 
-          <a href="#" className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#CCFF00] px-6 py-3 text-sm font-bold uppercase text-black transition hover:bg-[#b8e600] "> BROWSE WORKOUTS </a>
+          <a href="/" className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#CCFF00] px-6 py-3 text-sm font-bold uppercase text-black transition hover:bg-[#b8e600] "> BROWSE WORKOUTS </a>
         </div>
         <div>
           <Image src={Banner} alt="" className="w-ful object-contain" priority />
