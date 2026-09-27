@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useWorkout } from "@/context/WorkoutContext";
 import PlanWorkoutCard from "@/components/PlanWorkoutCard";
+import SortDropdown from "@/components/SortDropdown";
 
 export default function MyPlanPage() {
 
@@ -92,45 +93,69 @@ text-gray-400
           </div>
         </div>
 
-        {/* TABS */}
+{/* TABS + SORT */}
 
-        <div
-          className="
-flex
-gap-4
-mt-10
-"
-        >
-          <button
-            onClick={() => setActiveTab("plan")}
-            className={`
-px-5
-py-2
-rounded-lg
-font-semibold
+<div
+  className="
+    flex
+    justify-between
+    items-center
+    mt-10
+  "
+>
 
-${activeTab === "plan" ? "bg-white text-black" : "border border-gray-700"}
+  {/* TABS */}
+  <div
+    className="
+      flex
+      gap-4
+    "
+  >
 
-`}
-          >
-            Today's Plan
-          </button>
+    <button
+      onClick={() => setActiveTab("plan")}
+      className={`
+        px-5
+        py-2
+        rounded-lg
+        font-semibold
 
-          <button
-            onClick={() => setActiveTab("saved")}
-            className={`
-px-5
-py-2
-rounded-lg
-font-semibold
+        ${
+          activeTab === "plan"
+            ? "bg-white text-black"
+            : "border border-gray-700"
+        }
+      `}
+    >
+      Today's Plan
+    </button>
 
-${activeTab === "saved" ? "bg-white text-black" : "border border-gray-700"}
 
-`}
-          >
-            Saved
-          </button>
-        </div>
+    <button
+      onClick={() => setActiveTab("saved")}
+      className={`
+        px-5
+        py-2
+        rounded-lg
+        font-semibold
+
+        ${
+          activeTab === "saved"
+            ? "bg-white text-black"
+            : "border border-gray-700"
+        }
+      `}
+    >
+      Saved
+    </button>
+
+  </div>
+
+
+  {/* SORT DROPDOWN */}
+  <SortDropdown />
+
+</div>
 
         {/* WORKOUT LIST / EMPTY STATE */}
 

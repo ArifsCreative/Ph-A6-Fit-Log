@@ -8,7 +8,10 @@ const page = async () => {
   return (
     <>
       <Hero />
+
+      <section id="workouts">
       <Library workouts={workouts} />
+      </section>
          
     </>
   );

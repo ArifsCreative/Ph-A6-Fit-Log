@@ -11,21 +11,20 @@ const Navbar = () => {
     <nav className="navbar sticky top-0 z-50 bg-base-300 border border-[#253933] px-4 py-4 text-white md:px-8 md:py-6">
       <div className="navbar-start">
         <div className="flex gap-2 items-center text-lg md:text-xl font-bold">
+          <Link href="/" className="flex items-center gap-3"> 
           <Image src={Logo} alt="" width={32} height={32} />
-          FITLOG
+          <span className="font-bold text-xl">FITLOG</span>
+          </Link>
         </div>
       </div>
       <div className="navbar-center hidden md:flex">
         <div className="flex gap-4">
-          <a
-            href="#"
-            className="rounded-md bg-[#CCFF00]/15  px-4 py-2 font-bold text-[#CCFF00]"
-          >
+          <Link href="/#workouts" className="px-4 py-2 font-medium">
             Workout
-          </a>
+          </Link>
           <Link href="/my-plan" className="px-4 py-2 font-medium">
-  My Plan
-</Link>
+            My Plan
+          </Link>
         </div>
       </div>
 
