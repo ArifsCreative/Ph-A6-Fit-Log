@@ -12,7 +12,7 @@ const WorkoutCard = ({ workout }: Props) => {
       <div className="overflow-hidden rounded-xl border border-[#252933] bg-[#15171D] transition-all duration-300  hover:border-[#CCFF00]">
         <div className="h-44 w-full">
           <Image src={workout.image}
-          alt="" width={400} height={250} className="h-full w-full object-cover"
+            alt="" width={400} height={250} className="h-full w-full object-cover"
           />
         </div>
 
@@ -21,7 +21,7 @@ const WorkoutCard = ({ workout }: Props) => {
             {workout.muscleGroups.map((group) => (
               <span key={group} className="rounded-full bg-[#CCFF00] px-2 py-1 text-[10px] font-bold text-black">
 
-              {group} 
+                {group}
               </span>
             ))}
           </div>
@@ -32,20 +32,20 @@ const WorkoutCard = ({ workout }: Props) => {
           <p className="mt-1 text-xs text-gray-400">
             {workout.equipment}
           </p>
-          <div 
-          className="mt-4 border-t border-[#252933] pt-3 flex items-center gap-8 text-[10px] text-gray-400 ">
+          <div
+            className="mt-4 border-t border-[#252933] pt-3 flex items-center gap-8 text-[10px] text-gray-400 ">
             <span className="flex items-center gap-1">
               <Image src="/icons/clock.svg" alt="" width={12} height={12} />
-                {workout.duration} min
+              {workout.duration} min
             </span>
 
             <span className="flex items-center gap-1">
               <Image src="/icons/kcel.svg" alt="" width={12} height={12} />
-                {workout.caloriesBurned} kcal
+              {workout.caloriesBurned} kcal
             </span>
             <span className="flex items-center gap-1">
               <Image src="/icons/star.svg" alt="" width={12} height={12} />
-                {workout.rating}
+              {workout.rating}
             </span>
           </div>
         </div>

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -21,63 +20,15 @@ export default function SortDropdown() {
       </span>
 
 
-      <button
-        onClick={() => setOpen(!open)}
-        className="
-          flex items-center gap-2
-          rounded-lg
-          border border-[#29303d]
-          bg-[#151820]
-          px-4 py-2
-          text-sm text-white
-        "
-      >
+      <button onClick={() => setOpen(!open)} className="flex items-center gap-2 rounded-lg border border-[#29303d] bg-[#151820] px-4 py-2 text-sm text-white " >
         {selected}
-
-<ChevronDown
-  size={16}
-  className={`
-    transition-transform
-    duration-200
-    ${open ? "rotate-180" : ""}
-  `}
-/>
+        <ChevronDown size={16} className={` transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
 
-
       {open && (
-        <div
-          className="
-            absolute
-            right-0
-            top-11
-            z-20
-            w-36
-            rounded-lg
-            border
-            border-[#29303d]
-            bg-[#151820]
-          "
-        >
+        <div className=" absolute right-0 top-11 z-20 w-36 rounded-lg border border-[#29303d] bg-[#151820] " >
           {sortOptions.map((option) => (
-            <button
-              key={option}
-              onClick={() => {
-                setSelected(option);
-                setOpen(false);
-              }}
-              className="
-                block
-                w-full
-                px-4
-                py-2
-                text-left
-                text-sm
-                text-gray-300
-                hover:bg-[#b6ff00]
-                hover:text-black
-              "
-            >
+            <button key={option} onClick={() => { setSelected(option); setOpen(false); }} className="block w-full px-4 py-2 text-left  text-sm text-gray-300 hover:bg-[#b6ff00] hover:text-black">
               {option}
             </button>
           ))}

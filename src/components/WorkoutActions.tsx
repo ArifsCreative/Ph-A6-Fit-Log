@@ -8,46 +8,19 @@ export default function WorkoutActions({ workout }: { workout: Workout }) {
   const { addToPlan, saveWorkout } = useWorkout();
 
   return (
-    <div
-      className="
-flex
-gap-4
-mt-8
-"
-    >
-      <button
-        onClick={() => {
-          addToPlan(workout);
-
-          toast.success("Added to today's plan");
-        }}
-        className="
-bg-lime-400
-text-black
-px-5
-py-3
-rounded-xl
-font-semibold
-"
-      >
+    <div className="flex gap-4 mt-8">
+      <button onClick={() => {
+        addToPlan(workout);
+        toast.success("Added to today's plan");
+      }} className=" bg-lime-400 text-black px-5 py-3 rounded-xl font-semibold cursor-pointer">
         Add to today's plan
       </button>
 
       <button
         onClick={() => {
           saveWorkout(workout);
-
           toast.success("Saved for later");
-        }}
-        className="
-border
-border-gray-600
-px-5
-py-3
-rounded-xl
-font-semibold
-"
-      >
+        }} className="border border-gray-600 px-6 py-3 rounded-xl font-semibold cursor-pointer " >
         Save for later
       </button>
     </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
-
 import { Workout } from "@/types/workout";
 
 interface WorkoutContextType {
@@ -13,7 +12,6 @@ interface WorkoutContextType {
   removeFromPlan: (id: number) => void;
   removeFromSaved: (id: number) => void;
   markAsDone: (id: number) => void;
-  
 
   totalExercises: number;
   totalMinutes: number;
@@ -22,24 +20,19 @@ interface WorkoutContextType {
 }
 
 const WorkoutContext = createContext<WorkoutContextType | undefined>(undefined);
-
 export function WorkoutProvider({ children }: { children: ReactNode }) {
   const [plan, setPlan] = useState<Workout[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [initialized, setInitialized] = useState(false);
 
-
   useEffect(() => {
     const savedPlan = localStorage.getItem("plan");
-
     if (savedPlan) {
       setPlan(JSON.parse(savedPlan));
     }
-
     setInitialized(true);
     setLoaded(true);
   }, []);
-
 
   useEffect(() => {
     if (initialized) {
@@ -48,7 +41,6 @@ export function WorkoutProvider({ children }: { children: ReactNode }) {
   }, [plan, initialized]);
 
   const totalExercises = plan.length;
-
   const totalMinutes = plan.reduce(
     (total, workout) => total + workout.duration,
     0
@@ -62,7 +54,6 @@ export function WorkoutProvider({ children }: { children: ReactNode }) {
   const [saved, setSaved] = useState<Workout[]>([]);
   useEffect(() => {
     const savedWorkouts = localStorage.getItem("saved");
-
     if (savedWorkouts) {
       setSaved(JSON.parse(savedWorkouts));
     }
@@ -77,7 +68,6 @@ export function WorkoutProvider({ children }: { children: ReactNode }) {
   function addToPlan(workout: Workout) {
     setPlan((prev) => {
       if (prev.find((item) => item.id === workout.id)) return prev;
-
       return [...prev, workout];
     });
   }
@@ -85,7 +75,6 @@ export function WorkoutProvider({ children }: { children: ReactNode }) {
   function saveWorkout(workout: Workout) {
     setSaved((prev) => {
       if (prev.find((item) => item.id === workout.id)) return prev;
-
       return [...prev, workout];
     });
   }
@@ -97,10 +86,10 @@ export function WorkoutProvider({ children }: { children: ReactNode }) {
   }
 
   function removeFromSaved(id: number) {
-  setSaved((prev) => {
-    return prev.filter((workout) => workout.id !== id);
-  });
-}
+    setSaved((prev) => {
+      return prev.filter((workout) => workout.id !== id);
+    });
+  }
 
   function markAsDone(id: number) {
     setPlan((prev) => {

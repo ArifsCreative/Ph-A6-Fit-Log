@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
 import { Workout } from "@/types/workout";
 import { useWorkout } from "@/context/WorkoutContext";
 
@@ -12,9 +11,7 @@ export default function PlanWorkoutCard({ workout, isSaved, }: { workout: Workou
   return (
     <div className=" flex items-center justify-between bg-[#151820] borderborder-[#252b36] rounded-xl p-4 ">
 
-
-      {/* LEFT SECTION */}
-
+      {/* left section */}
       <div className=" flex items-center gap-4">
         <Image src={workout.image} alt="" width={145} height={80} className=" rounded-lg object-cover w-[145px] h-[80px]" />
         <div>
@@ -46,43 +43,26 @@ export default function PlanWorkoutCard({ workout, isSaved, }: { workout: Workou
         </div>
       </div >
 
-      {/* ACTION BUTTONS */}
+      {/* buttons */}
 
       < div className="flex items-center gap-3" >
         <Link
           href={`/workouts/${workout.id}`}
-          className="
-border
-border-gray-600
-px-5
-py-2
-rounded-full
-text-sm
-"
-        >
+          className="border border-gray-600 px-5 py-2 rounded-full text-sm">
           View Details
         </Link>
 
-        <button
-          onClick={() => {
-            if (isSaved) {
-              removeFromSaved(workout.id);
-            } else {
-              markAsDone(workout.id);
-            }
-          }}
-          className="
-  bg-[#CCFF00]
-  text-black
-  px-5
-  py-2
-  rounded-full
-  font-semibold
-  text-sm
-  "
-        >
-          ✓ Mark as Done
-        </button>
+        {!isSaved && (
+          <button
+            onClick={() => markAsDone(workout.id)}
+            className="bg-[#CCFF00] text-black px-5 py-2 rounded-full font-semibold text-sm"
+          >
+            <span className="flex items-center gap-1">
+            <Image src="/icons/check.svg" alt="" width={16} height={16}/>
+            Mark as Done
+            </span>
+          </button>
+        )}
 
         <button
           onClick={() => {
@@ -93,7 +73,7 @@ text-sm
             }
           }}
         >
-          ×
+          <Image src="/icons/close.svg" alt="" width={16} height={16}/>
         </button>
       </div >
     </div >

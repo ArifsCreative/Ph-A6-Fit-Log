@@ -14,7 +14,6 @@ export default async function WorkoutDetails({
   if (!workout) {
     return <div>workout not found</div>;
   }
-
   return (
     <main className="min-h-screen bg-[#111318] text-white p-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -76,7 +75,7 @@ export default async function WorkoutDetails({
           </div>
 
           <div className="flex gap-4 mt-8">
-            <WorkoutActions workout={workout}/>
+            <WorkoutActions workout={workout} />
           </div>
         </div>
       </div>
