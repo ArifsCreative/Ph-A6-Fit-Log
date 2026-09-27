@@ -3,9 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useWorkout } from "@/context/WorkoutContext";
 import Logo from "@/assets/logo.png";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const { plan, saved, loaded } = useWorkout();
+  const pathname = usePathname();
 
   return (
     <nav className="navbar sticky top-0 z-50 bg-base-300 border border-[#253933] px-4 py-4 text-white md:px-8 md:py-6">
@@ -19,10 +21,13 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden md:flex">
         <div className="flex gap-4">
-          <Link href="/#workouts" className="px-4 py-2 font-medium">
-            Workout
+          <Link href="/#workouts"
+            className={`px-4 py-2 rounded-full font-medium text-sm transition ${pathname === "/" ? "bg-[#1c2b0d] text-[#CCFF00]" : "text-gray-400"}`}>
+            Workouts
           </Link>
-          <Link href="/my-plan" className="px-4 py-2 font-medium">
+
+          <Link href="/my-plan"
+            className={`px-4 py-2 rounded-full font-medium text-sm transition ${pathname === "/my-plan" ? "bg-[#1c2b0d] text-[#CCFF00]" : "text-gray-400"}`}>
             My Plan
           </Link>
         </div>
