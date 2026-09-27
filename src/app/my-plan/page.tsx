@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useWorkout } from "@/context/WorkoutContext";
 import PlanWorkoutCard from "@/components/PlanWorkoutCard";
@@ -118,9 +119,9 @@ export default function MyPlanPage() {
                 Browse the library and add a lift to get today moving.
               </p>
 
-              <a href="/" className=" inline-block mt-6 bg-[#CCFF00] text-black px-6 py-3 rounded-xl font-semibold ">
+              <Link href="/" className=" inline-block mt-6 bg-[#CCFF00] text-black px-6 py-3 rounded-xl font-semibold ">
                 Go to workouts
-              </a>
+              </Link>
             </div>
           ) : (
             currentWorkouts.map((workout) => (
